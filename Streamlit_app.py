@@ -3,7 +3,12 @@ import pickle
 import numpy as np
 
 # Load model and encoders
-with open('models/trained_model.pkl', 'rb') as f:
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, 'models', 'trained_model.pkl')
+
+with open(MODEL_PATH, 'rb') as f:
     model = pickle.load(f)
 
 # Commented out label encoder loading and usage due to missing file
